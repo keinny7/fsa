@@ -96,7 +96,7 @@
     <main> 
 
     <?php
-        require_once "php/core/router.php";
+        require_once "core/router.php";
         $router = new Router();
 
         if(isset($_GET["vista"]))
