@@ -18,13 +18,13 @@ class Router
             case "contact":
                 require_once "view/".$view.".html";
             break;
-            case "Cultura":
+            case "cultura":
                 require_once "view/".$view.".html";
             break;
             case "elements":
                 require_once "view/".$view.".html";
             break;
-            case "gellary":
+            case "galeria":
                 require_once "view/".$view.".html";
             break;
             case "main":
@@ -42,10 +42,10 @@ class Router
             case "terms-of-use":
                 require_once "view/".$view.".html";
             break;
-            case "Torneos":
+            case "torneos":
                 require_once "view/".$view.".html";
             break;
-            case "Tsumes":
+            case "tsumes":
                 require_once "view/".$view.".html";
             break;
         }

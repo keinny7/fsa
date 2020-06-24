@@ -1,13 +1,13 @@
-<!doctype html>
+<!Doctype html>
 <html class="no-js" lang="zxx">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>FSA </title>
+        <title> FSA </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="view/assets/img/favicon.ico">
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="view/assets/css/bootstrap.min.css">
@@ -46,44 +46,42 @@
                 <!-- Main-menu -->
                 <div class="main-menu d-none d-lg-block">
                     <nav>
-                        <ul id="navigation">                                                     
-                        <!-- Inicio
-                            Noticas
-                            Tsumes
-                            Asociaciones y clubes
-                            Galeria
-                            Torneos
-                            Elaces de Interés
-                            Nosotros
+                        <ul id="navigation">
+                            <!-- Inicio
+       Noticas
+       Tsumes
+       Asociaciones y clubes
+       Galeria
+       Torneos
+       Elaces de Interés
+       Nosotros
 
-                            <li><a href="blog.html">Noticias</a>
+       <li><a href="blog.html">Noticias</a>
+           <ul class="submenu">
+               <li><a href="blog.html">Blog</a></li>
+               .... <li><a href="single-blog.html">Blog Details</a></li>
+           </ul>
+       </li>
+    -->
+                            <li><a href="?vista=main">Inicio</a></li>
+                            <li><a href="?vista=noticias">Noticias</a></li>
+                            <li><a href="?vista=cultura">Cultura</a></li>
+                            <li><a href="?vista=nosotros">Nosotros</a></li>
+                            <li><a href="?vista=galeria">Galeria</a></li>
+                            <li><a href="?vista=torneos">Torneos</a></li>
+                            <li>
+                                <a href="#">Recursos</a>
                                 <ul class="submenu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    .... <li><a href="single-blog.html">Blog Details</a></li>
+                                    <li><a href="?vista=tsumes">Tsumes</a></li>
+                                    <li><a href="?vista=josekis">Josekis</a></li>
                                 </ul>
                             </li>
-                         -->                                                                          
-                            <li><a href="?vista=main">Inicio</a></li>
-                            <li><a href="?vista=noticias">Noticias</a>                             
-                            </li>
-                            <li><a href="?vista=Tsumes">Tsumes</a>                             
-                            </li>
-                            
-                            
-                            <li><a href="?vista=gellary">Galeria</a></li>
-                            
-                            <li><a href="?vista=Torneos">Torneos</a>
-                                
-                            </li>
-                            
-                            <li><a href="?vista=about">Nosotros</a></li>
-                            <li><a href="#">Enlaces de Interés</a></li>
                         </ul>
                     </nav>
                 </div>          
                 <!-- Header-btn -->
                 <div class="d-none d-xl-block">
-                    <a href="?vista=contact" class="btn btn2">Contáctanos</a>
+                    <a href="?vista=contacto" class="btn btn2">Contáctanos</a>
                 </div>
                 <!-- Mobile Menu -->
                 <div class="col-12">
@@ -93,35 +91,35 @@
        </div>
         <!-- Header End -->
     </header>
-    <main> 
+    <main>
     
     <?php
 
-        if(isset($_POST['btnIniciar'])){
+        // if(isset($_POST['btnIniciar'])){
 
 
         //valida el inicio de sesión
-        $validar = $usuario->validarU($_POST['txtUsuario'], $_POST['txtClave']);
-        if($validar == true){
-            $_SESSION['sesion_iniciada'] = true;
-            $datos = $usuario->datosUsuario($_POST['txtUsuario'], $_POST['txtClave']);
-            // nombre de usuario es nombre real
-            $_SESSION['nombreUsuario'] = $datos['NombreCompleto'];
-            // el usuario es el nickname
-            $_SESSION['usuario'] = $datos['Usuario'];
-            // el rol es el rol :V (si es administrativo, de comité o usuario común)
-            $_SESSION['rol'] = $datos['IdRol'];
-            $_SESSION['correo'] = $datos['Correo'];
-            include_once "vista/home.php";
-        }else{
-            $error = "<div class='alert alert-danger alert-dismissible' role='alert'>
-            <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span>
-            </button>
-            <strong>Error al iniciar sesión</strong> Usuario y/o contraseña incorrecta.
-            </div>";
-            include_once "vista/vlogin.php";
-            }
-        }
+        // $validar = $usuario->validarU($_POST['txtUsuario'], $_POST['txtClave']);
+        // if($validar == true){
+        //     $_SESSION['sesion_iniciada'] = true;
+        //     $datos = $usuario->datosUsuario($_POST['txtUsuario'], $_POST['txtClave']);
+        //     // nombre de usuario es nombre real
+        //     $_SESSION['nombreUsuario'] = $datos['NombreCompleto'];
+        //     // el usuario es el nickname
+        //     $_SESSION['usuario'] = $datos['Usuario'];
+        //     // el rol es el rol :V (si es administrativo, de comité o usuario común)
+        //     $_SESSION['rol'] = $datos['IdRol'];
+        //     $_SESSION['correo'] = $datos['Correo'];
+        //     include_once "vista/home.php";
+        // }else{
+        //     $error = "<div class='alert alert-danger alert-dismissible' role='alert'>
+        //     <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span>
+        //     </button>
+        //     <strong>Error al iniciar sesión</strong> Usuario y/o contraseña incorrecta.
+        //     </div>";
+        //     include_once "vista/vlogin.php";
+        //     }
+        // }
 
         //retorna las páginas pedidas
         require_once "core/router.php";
@@ -136,7 +134,7 @@
 
     ?>
 
-    </main>
+</main>
    <footer>
         <div class="footer-area fix">
             <!-- Footer Caption -->
@@ -151,7 +149,7 @@
                                 <div class="footer-tittle">
                                     <h4>Contáctanos</h4>
                                     <div class="footer-pera">
-                                        <p> (+56) 933-204-806 contacto@fsa.com </p>
+                                        <p> Discord: FSA  <br />federacion.shogi.america@gmail.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -161,10 +159,11 @@
                                 <div class="footer-tittle">
                                     <h4>Enlaces</h4>
                                     <ul>
-                                        <li><a href="#">Inicio</a></li>
-                                        <li><a href="#"> Torneos</a></li>
-                                        <li><a href="#"> F.S.A </a></li>
-                                        <li><a href="#">Contáctanos</a></li>
+                                        <li><a href="?vista=main">Inicio</a></li>
+                                        <li><a href="?vista=torneos">Torneos</a></li>
+                                        <!--<li><a href="?vista=torneos">Torneos</a></li>-->
+                                        <li><a href="?vista=nosotros">F.S.A </a></li>
+                                        <li><a href="?vista=contacto">Contáctanos</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -174,10 +173,11 @@
                                 <div class="footer-tittle">
                                     <h4>Social</h4>
                                     <!-- Social -->
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                     <div class="footer-social">
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fas fa-globe"></i></a>
+                                        <a href="https://www.facebook.com/Federaci%C3%B3n-de-Shogi-Americana-107893957550442/"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://www.youtube.com/channel/UCSQNXORKJ8vcaSPEAMOGugQ"><i class="fa fa-youtube-play"></i></a>
+                                        <a href="https://instagram.com/federacion_shogi_americana?igshid=7bcdwbjh9bx5"><i class="fa fa-instagram"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -185,9 +185,9 @@
                     </div>
                 </div>
                 <div class="copyright pt-40">
-                    <p><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></p>
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  By <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
         </div>
